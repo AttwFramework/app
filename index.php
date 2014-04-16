@@ -4,7 +4,7 @@
 	( !defined( 'APP' ) ) ? define( 'APP', 'Application' ) : null;
 
 	if( file_exists( 'vendor' . DS . 'autoload.php' ) ){
-		require_once 'vendor' . DS . 'autoload.php';
+		$load = require 'vendor' . DS . 'autoload.php';
 
 		$autoloader = new Attw\Autoloader\Autoloader();
 		$application = new Attw\Autoloader\Autoloadable\Application( APP );
@@ -24,5 +24,5 @@
 
     require_once 'Application' . DS . 'Configurations.php';
     require_once 'Application' . DS . 'Configurations' . DS . 'routes.php';
-    require_once ATTW_FOLDER . DS . 'libs' . DS . 'Attw' . DS . 'configs.php';
-    require_once ATTW_FOLDER . DS . 'libs' . DS . 'Attw' . DS . 'application.php';
+    require_once 'Application' . DS . 'Configurations' . DS . 'standart_configs.php';
+    require_once 'Application' . DS . 'Application.php';
