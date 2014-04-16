@@ -2,3 +2,5 @@ templates_c/
 tmp/
 cache/
 Application/err-logs.txt
+vendor/
+composer.lock
