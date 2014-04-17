@@ -16,13 +16,13 @@
 		$autoload = ATTW_FOLDER . DS . 'autoload' . DS . 'autoload_without_composer.php';
 
 		if( !file_exists( $autoload ) ){
-			//throw new Exception( 'Indicate a valid folder to AttwFramework' );
+			throw new Exception( 'Indicate a valid folder to AttwFramework' );
 		}
 
 		require_once $autoload;
 	}
 
-    require_once 'Application' . DS . 'Configurations.php';
-    require_once 'Application' . DS . 'Configurations' . DS . 'routes.php';
-    require_once 'Application' . DS . 'Configurations' . DS . 'standart_configs.php';
-    require_once 'Application' . DS . 'Application.php';
+	require_once 'Application' . DS . 'Configurations.php';
+	require_once 'Application' . DS . 'Configurations' . DS . 'routes.php';
+	require_once 'Application' . DS . 'Configurations' . DS . 'standart_configs.php';
+	require_once 'Application' . DS . 'Application.php';
