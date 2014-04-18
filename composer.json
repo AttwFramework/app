@@ -4,8 +4,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Attw\\": "vendor/attwframework/framework/libs/Attw/",
-            "Smarty\\libs\\": "vendor/attwframework/framework/libs/Smarty/libs/"
+            "Attw\\": "vendor/attwframework/framework/libs/Attw/"
         }
     }
 }

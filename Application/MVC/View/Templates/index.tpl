@@ -57,12 +57,5 @@ Collection::add( 'Default', $connector );
 				{$message}
 			</div>
 		</div>
-		<footer>
-			<div class="links">
-				<a href="http://github.com/AttwFramework" class="link1" target="_blank"><img src="public/images/github-icon.png" width="64px" style="border-radius: 50px;" /></a>
-				<a href="http://facebook.com/gabriel.forca" class="link1" target="_blank"><img src="public/images/facebook-icon.png" width="64px" style="border-radius: 50px;" /></a>
-				<a href="http://twitter.com/GabrielJMJ" class="link1" target="_blank"><img src="public/images/twitter-icon.png" width="64px" style="border-radius: 50px;" /></a>
-			</div>
-		</footer>
 	</body>
 </html>
