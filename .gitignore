@@ -4,3 +4,4 @@ cache/
 Application/err-logs.txt
 vendor/
 composer.lock
+composer.phar
