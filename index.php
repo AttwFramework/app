@@ -4,7 +4,7 @@
 	( !defined( 'APP' ) ) ? define( 'APP', 'Application' ) : null;
 
 	if( file_exists( 'vendor' . DS . 'autoload.php' ) ){
-		$load = require 'vendor' . DS . 'autoload.php';
+		require_once 'vendor' . DS . 'autoload.php';
 
 		$autoloader = new Attw\Autoloader\Autoloader();
 		$application = new Attw\Autoloader\Autoloadable\Application( APP );

@@ -1,5 +1,11 @@
 {
     "require": {
         "attwframework/framework": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "Attw\\": "vendor/attwframework/framework/libs/Attw/",
+            "Smarty\\libs\\": "vendor/attwframework/framework/libs/Smarty/libs/"
+        }
     }
 }
