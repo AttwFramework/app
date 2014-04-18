@@ -2,7 +2,6 @@ templates_c/
 tmp/
 cache/
 Application/err-logs.txt
-vendor/attwframework/framework/
 vendor/autoload.php
 vendor/composer/
 composer.lock
