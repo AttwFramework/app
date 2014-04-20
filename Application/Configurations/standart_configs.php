@@ -2,11 +2,13 @@
 	use Attw\Config\Configs;
 	use Attw\HTTP\Response;
 
+	$configs = Configs::getInstance();
+
 	/**
 	 * Errors
 	*/
-	if( Configs::exists( 'ErrorsReporting' ) ){
-		error_reporting( Configs::get( 'ErrorsReporting' ) );
+	if( $configs->exists( 'ErrorsReporting' ) ){
+		error_reporting( $configs->get( 'ErrorsReporting' ) );
 	}else{
 		error_reporting( E_ALL | E_STRICT );
 	}
@@ -14,8 +16,8 @@
 	/**
 	 * Error logs
 	*/
-	if( Configs::exists( 'Logs' ) ){
-		$logsConfig = Configs::get( 'Logs' );
+	if( $configs->exists( 'Logs' ) ){
+		$logsConfig = $configs->get( 'Logs' );
 
 		if( isset( $logsConfig['SystemErrorLogs'] ) ){
 			if( isset( $logsConfig['SystemErrorLogs']['Activated'] ) && $logsConfig['SystemErrorLogs']['Activated'] ){
@@ -32,18 +34,18 @@
 	/**
 	 * Timezone
 	*/
-	if( Configs::exists( 'Timezone' ) ){
-		date_default_timezone_set( Configs::get( 'Timezone' ) );
+	if( $configs->exists( 'Timezone' ) ){
+		date_default_timezone_set( $configs->get( 'Timezone' ) );
 	}
 
 	/**
 	 * Page encoding
 	*/
-	if( Configs::exists( 'Content-Type' ) ){
+	if( $configs->exists( 'Content-Type' ) ){
 		$response = new Response;
-		if( Configs::exists( 'Charset' ) ){
-			$response->sendHeader( 'Content-Type', Configs::get( 'Content-Type' ) . '; Charset=' . Configs::get( 'Charset' ) );
+		if( $configs->exists( 'Charset' ) ){
+			$response->sendHeader( 'Content-Type', $configs->get( 'Content-Type' ) . '; Charset=' . $configs->get( 'Charset' ) );
 		}else{
-			$response->sendHeader( 'Content-Type', Configs::get( 'Content-Type' ) );
+			$response->sendHeader( 'Content-Type', $configs->get( 'Content-Type' ) );
 		}
 	}
