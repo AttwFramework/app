@@ -1,6 +1,6 @@
-AttwFramework
-==============
-[![Latest Stable Version](https://poser.pugx.org/attwframework/attwframework/v/stable.png)](https://packagist.org/packages/attwframework/attwframework) [![Total Downloads](https://poser.pugx.org/attwframework/attwframework/downloads.png)](https://packagist.org/packages/attwframework/attwframework) [![Latest Unstable Version](https://poser.pugx.org/attwframework/attwframework/v/unstable.png)](https://packagist.org/packages/attwframework/attwframework) [![License](https://poser.pugx.org/attwframework/attwframework/license.png)](https://packagist.org/packages/attwframework/attwframework)
+AttwFramework skeleton application
+=
+[![Latest Unstable Version](https://poser.pugx.org/attwframework/app/v/unstable.png)](//packagist.org/packages/attwframework/app) [![Total Downloads](https://poser.pugx.org/attwframework/app/downloads.png)](https://packagist.org/packages/attwframework/app) [![License](https://poser.pugx.org/attwframework/app/license.png)](https://packagist.org/packages/attwframework/app)
 
 AttwFramework is a MVC micro framework to simple projects developments.
 
