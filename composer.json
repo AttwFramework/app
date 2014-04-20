@@ -1,5 +1,19 @@
 {
+	"name": "attwframework/app",
+    "description": "AttwFramework skeleton application.",
+    "authors": [
+        {
+            "name": "Gabriel Jacinto",
+            "email": "gamjj74@hotmail.com",
+            "homepage": "http://gabrieljmj.github.io"
+        }
+    ],
+    "license": "MIT",
+    "homepage": "http://attwframework.github.io",
+    "type": "skeleton",
+    "keywords": ["framework", "skeleton application"],
     "require": {
+        "php": ">=5.3.0",
         "attwframework/framework": "dev-master"
     },
     "autoload": {
