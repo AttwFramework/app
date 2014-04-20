@@ -2,6 +2,6 @@ templates_c/
 tmp/
 cache/
 Application/err-logs.txt
-vendor/autoload.php
-vendor/composer/
+vendor/
 composer.lock
+composer.phar

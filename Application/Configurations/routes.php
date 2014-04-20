@@ -1,8 +1,10 @@
 <?php
     use Attw\Router\RoutingManager;
 
+    $routing = RoutingManager::getInstance();
+
     /**
-     * RoutingManager::add( 'id', [ 
+     * $routing->add( 'id', [ 
      * 'controller' => [ 'post' => 'Posts' ] 
      * 'action' => 'read'
      * ] );
