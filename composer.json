@@ -19,7 +19,8 @@
     },
     "autoload": {
         "psr-4": {
-            "Attw\\": "vendor/attwframework/framework/libs/Attw/"
+            "Attw\\": "vendor/attwframework/framework/libs/Attw/",
+            "MVC\\": "Application/MVC/"
         }
     }
 }
