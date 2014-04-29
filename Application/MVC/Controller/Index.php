@@ -5,9 +5,7 @@
 
     class Index extends AbstractController{
         public function index(){
-            $view = $this->loadView( 'Index' );
-			$view->message = 'This message was puted here with <b>Smarty</b>.';
-			$view->setTplFile( 'index.tpl' );
-			$view->render();
+			$vars = [ 'message' => 'This message was puted here with <b>Smarty</b>.' ];
+			$this->view( 'index.html', $vars );
         }
     }
