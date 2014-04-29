@@ -5,7 +5,7 @@
 
     class Index extends AbstractController{
         public function index(){
-			$vars = [ 'message' => 'This message was puted here with <b>Smarty</b>.' ];
-			$this->view( 'index.html', $vars );
+		$vars = [ 'message' => 'This message was puted here with <b>Smarty</b>.' ];
+		$this->view( 'index.html', $vars );
         }
     }
