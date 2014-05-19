@@ -1,6 +1,6 @@
 <?php
-    use Attw\DB\Connection\MySQLConnectorConfig;
-    use Attw\DB\Connection\PDOConnector;
+    use Attw\DB\Connection\Connector\Config\MySQLConnectorConfig;
+    use Attw\DB\Connection\Connector\PDOConnector;
     use Attw\DB\Collection as DBCollection;
     
     /**
