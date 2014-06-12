@@ -7,7 +7,7 @@
 		require_once 'vendor' . DS . 'autoload.php';
 		
 		$autoloader = new Attw\Autoloader\Autoloader();
-		$application = new Attw\Autoloader\Autoloadable\Application( APP );
+		$application = new Attw\Autoloader\Autoloadable\DefaultAutoloadable( APP );
 		$autoloader->attach( $application );
 	}else{
 		//Point where is the framework folder

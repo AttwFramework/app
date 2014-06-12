@@ -55,3 +55,4 @@
     $configs->add( 'Charset', 'UTF-8' );
 
     require_once 'Configurations' . DIRECTORY_SEPARATOR . 'db_connections.php';
+    require_once 'Event' . DIRECTORY_SEPARATOR . 'events.php';
