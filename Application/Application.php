@@ -9,5 +9,5 @@
 
 	$routingHandler = new RoutingHandler( $routesCollection );
 
-    $application = new Application( new ControllerDispatcher(), $routingHandler );
-    $application->run( new Response(), new Request(), 'MVC\Controller' );
+	$application = new Application( new ControllerDispatcher(), $routingHandler );
+	$application->run( new Response(), new Request(), 'MVC\Controller' );
