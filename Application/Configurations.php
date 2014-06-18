@@ -6,19 +6,20 @@
 	/**
 	 * Configurations of logs
 	*/
-	$logs = array(  
-					'SystemErrorLogs' => array( 
-						'Activated' => true,
-						'File' => APP_ROOT . DS . 'Application' . DS . 'err-logs.txt' 
-					),
+	$logs = array(
+		'SystemErrorLogs' => array( 
+			'Activated' => true,
+			'File' => APP_ROOT . DS . 'Application' . DS . 'err-logs.txt' 
+		),
 
-				   'SystemLogs' => array( 
-				   		'File' => APP_ROOT . DS . 'Application' . DS . 'logs.txt' 
-				   	),
+		'SystemLogs' => array( 
+			'File' => APP_ROOT . DS . 'Application' . DS . 'logs.txt'
+		),
 
-				   'LogTypesLocals' => array( 
-						LOG_WARNING => APP_ROOT . DS . 'Application' . DS . 'logs' . DS . 'logs-warning.txt' 
-					)
+		'LogTypesLocals' => array( 
+			LOG_WARNING => APP_ROOT . DS . 'Application' . DS . 'logs' . DS . 'logs-warning.txt'
+			//...
+		)
 	);
 
 	$configs->add( 'Logs', $logs );
@@ -33,8 +34,10 @@
 	/**
 	 * Paths configuration
 	*/
-	$paths = array( 'Templates' => APP_ROOT . DS . 'Application' . DS . 'MVC' . DS . 'View' . DS . 'Templates',
-					'Temporary' => APP_ROOT . DS . 'tmp' );
+	$paths = array( 
+		'Templates' => APP_ROOT . DS . 'Application' . DS . 'MVC' . DS . 'View' . DS . 'Templates',
+		'Temporary' => APP_ROOT . DS . 'tmp' 
+	);
 	
 	$configs->add( 'Paths', $paths );
 
