@@ -1,6 +1,7 @@
 <?php
 	use Attw\Config\Configs;
 	use Attw\HTTP\Response;
+	use Attw\Logger\FileLogger;
 
 	$configs = Configs::getInstance();
 
@@ -18,6 +19,10 @@
 	*/
 	if( $configs->exists( 'Logs' ) ){
 		$logsConfig = $configs->get( 'Logs' );
+
+		if( isset( $logsConfig['LogTypesLocals'] ) ){
+			FileLogger::setLogsLocals( $logsConfig['LogTypesLocals'] );
+		}
 
 		if( isset( $logsConfig['SystemErrorLogs'] ) ){
 			if( isset( $logsConfig['SystemErrorLogs']['Activated'] ) && $logsConfig['SystemErrorLogs']['Activated'] ){
