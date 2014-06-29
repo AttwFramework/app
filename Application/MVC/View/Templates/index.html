@@ -39,12 +39,14 @@
 						<pre>
 use Attw\DB\Connection\MySQLConnectorConfig;
 use Attw\DB\Connection\PDOConnector;
-use Attw\DB\Collection;
-							
+use Attw\DB\Collection as DBCollection;
+
+$dbcollection = DBCollection::getInstance();
+		
 $connector_config = new MySQLConnectorConfig( 'localhost', 'test', 'root', '' );
 $connector = new PDOConnector( $connector_config );
 							
-Collection::add( 'Default', $connector );
+$dbcollection->add( 'Default', $connector );
 </pre>
 					</div>
 					<div class="section" id="others">
