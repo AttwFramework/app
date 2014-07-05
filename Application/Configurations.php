@@ -36,7 +36,7 @@
 	*/
 	$paths = array( 
 		'Templates' => APP_ROOT . DS . 'Application' . DS . 'MVC' . DS . 'View' . DS . 'Templates',
-		'Temporary' => APP_ROOT . DS . 'tmp' 
+		'Temporary' => APP_ROOT . DS . 'tmp'
 	);
 	
 	$configs->add( 'Paths', $paths );
