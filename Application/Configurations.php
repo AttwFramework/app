@@ -22,14 +22,14 @@
 		)
 	);
 
-	$configs->add( 'Logs', $logs );
+	$configs->set( 'Logs', $logs );
 
 	/**
 	 * SQL Generators Collection
 	*/
 	$sqls = array( 'mysql' => new Attw\DB\SQL\MySQL );
 
-	$configs->add( 'SQLGenerators', $sqls );
+	$configs->set( 'SQLGenerators', $sqls );
 
 	/**
 	 * Paths configuration
@@ -39,24 +39,24 @@
 		'Temporary' => APP_ROOT . DS . 'tmp'
 	);
 	
-	$configs->add( 'Paths', $paths );
+	$configs->set( 'Paths', $paths );
 
 	/**
 	 * TimeZone
 	*/
-	$configs->add( 'Timezone', 'America/Sao_Paulo' );
+	$configs->set( 'Timezone', 'America/Sao_Paulo' );
 
 	/**
 	 * Errors
 	*/
-	$configs->add( 'ErrorsReporting', E_ALL | E_STRICT  );
-	$configs->add( 'PageErrors', array( '404' => 'http://localhost' ) );
+	$configs->set( 'ErrorsReporting', E_ALL | E_STRICT  );
+	$configs->set( 'PageErrors', array( '404' => 'http://localhost' ) );
 
 	/**
 	 * Content types
 	*/
-	$configs->add( 'Content-Type', 'text/html' );
-	$configs->add( 'Charset', 'UTF-8' );
+	$configs->set( 'Content-Type', 'text/html' );
+	$configs->set( 'Charset', 'UTF-8' );
 
 	require_once 'Configurations' . DIRECTORY_SEPARATOR . 'db_connections.php';
 	require_once 'Event' . DIRECTORY_SEPARATOR . 'events.php';
