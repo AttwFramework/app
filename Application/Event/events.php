@@ -1,4 +1,4 @@
 <?php
-	use Attw\Event\EventManager;
+    use Attw\Event\EventManager;
 
-	$eventManager = EventManager::getInstance();
+    $eventManager = EventManager::getInstance();

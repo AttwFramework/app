@@ -3,10 +3,12 @@
     use Attw\Router\RoutesCollection;
 
     /**
-     * If you change the name of this variable, 
+     * If you change the name of this variable,
      *  go to Application/Application.php and change there too
     */
     $routesCollection = new RoutesCollection();
+
+    $routesCollection->add( new Route( 'index', null, array( 'controller' => 'Index', 'action' => 'index' ) ) );
 
     /**
      * @example

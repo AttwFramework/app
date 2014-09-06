@@ -1,7 +1,7 @@
 <?php
     use Attw\DB\Connection\Connector\PDOConnector;
     use Attw\DB\Collection as DBCollection;
-    
+
     /*
      * Default example
      * To use the database components, define a defualt connection:

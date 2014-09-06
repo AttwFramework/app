@@ -1,13 +1,32 @@
 <?php
-	use Attw\Application\Application;
-	use Attw\Router\RoutingHandler;
-	use Attw\Application\ControllerDispatcher;
-	use Attw\HTTP\Request;
-	use Attw\HTTP\Response;
+/**
+ * Run the application
+*/
 
-	require_once 'Configurations' . DIRECTORY_SEPARATOR . 'routes.php';
+use Attw\Application\Application;
+use Attw\Application\ControllerDispatcher;
+use Attw\HTTP\Request;
+use Attw\HTTP\Response;
+use Attw\Router\RoutingHandler;
+use Attw\Tool\UrlParser;
 
-	$routingHandler = new RoutingHandler( $routesCollection );
+require_once 'Configurations' . DIRECTORY_SEPARATOR . 'routes.php';
 
-	$application = new Application( new ControllerDispatcher(), $routingHandler );
-	$application->run( new Response(), new Request(), 'MVC\Controller', 'MVC\Model' );
+$routingHandler = new RoutingHandler($routesCollection);
+$urlParser = new UrlParser();
+$request = new Request();
+$url = $request->server('REQUEST_URI');
+$queries = $urlParser->getQueries($url);
+$request->addQuery($queries);
+
+$application = new Application(new ControllerDispatcher(), $routingHandler);
+$application->run(new Response(), $request, 'MVC\Controller', 'MVC\Model', 'Index', 'index');
+
+/**
+ * ^ DEFAULT INIT ($application)
+ *
+ * Controllers namespace: MVC\Controller
+ * Models namespace: MVC\Model
+ * Default controller: Index
+ * Default action: index
+*/
