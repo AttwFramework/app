@@ -1,7 +1,8 @@
-templates_c/
 tmp/
 cache/
 Application/err-logs.txt
 vendor/
 composer.lock
 composer.phar
+Application/Auth/
+Application/MVC/Controller/Tests.php
