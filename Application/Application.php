@@ -35,7 +35,7 @@ $routingHandler = new RoutingHandler($routesCollection);
 $urlGenerator = new RouterUrlGenerator($routesCollection);
 $urlParser = new UrlParser();
 $request = new Request();
-$url = $request->server('REQUEST_URI');
+$url = full_url($request->server());
 $queries = $urlParser->getQueries($url);
 $request->addQuery($queries);
 
@@ -54,4 +54,27 @@ $application->run(new Response(), $request, $urlGenerator, $view, 'MVC\Controlle
 function templateNotConfigured()
 {
     throw new ApplicationException('Configure the default template path');
+}
+
+/**
+ * @author Timo Huovinen
+*/
+function url_origin($s, $use_forwarded_host=false)
+{
+    $ssl = (!empty($s['HTTPS']) && $s['HTTPS'] == 'on') ? true:false;
+    $sp = strtolower($s['SERVER_PROTOCOL']);
+    $protocol = substr($sp, 0, strpos($sp, '/')) . (($ssl) ? 's' : '');
+    $port = $s['SERVER_PORT'];
+    $port = ((!$ssl && $port=='80') || ($ssl && $port=='443')) ? '' : ':'.$port;
+    $host = ($use_forwarded_host && isset($s['HTTP_X_FORWARDED_HOST'])) ? $s['HTTP_X_FORWARDED_HOST'] : (isset($s['HTTP_HOST']) ? $s['HTTP_HOST'] : null);
+    $host = isset($host) ? $host : $s['SERVER_NAME'] . $port;
+    return $protocol . '://' . $host;
+}
+
+/**
+ * @author Timo Huovinen
+*/
+function full_url($s, $use_forwarded_host=false)
+{
+    return url_origin($s, $use_forwarded_host) . $s['REQUEST_URI'];
 }
