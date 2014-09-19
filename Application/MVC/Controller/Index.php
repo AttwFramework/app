@@ -1,7 +1,7 @@
 <?php
 namespace MVC\Controller;
 
-use Attw\Controller\AbstractController;
+use Attw\Mvc\Controller\AbstractController;
 
 class Index extends AbstractController
 {

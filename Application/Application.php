@@ -4,17 +4,23 @@
 */
 
 use Attw\Application\Application;
-use Attw\Application\ControllerDispatcher;
+use Attw\Mvc\Controller\ControllerDispatcher;
 use Attw\HTTP\Request;
 use Attw\HTTP\Response;
 use Attw\Router\RoutingHandler;
 use Attw\Router\RouterUrlGenerator;
 use Attw\Tool\UrlParser;
-use Attw\View\StandartView;
+use Attw\Mvc\View\StandartView;
 use Attw\Config\Configs;
 use Attw\Application\Exception\ApplicationException;
+use Attw\Mvc\Model\ModelDispatcher;
+use Attw\DB\Collection as DBCollection;
+use Attw\DB\Storage\Storage;
+use Attw\DB\Entity\EntityStorage;
 
 require_once 'Configurations' . DIRECTORY_SEPARATOR . 'routes.php';
+require_once 'Event' . DIRECTORY_SEPARATOR . 'events.php';
+require_once 'Configurations' . DIRECTORY_SEPARATOR . 'db_connections.php';
 
 $configs = Configs::getInstance();
 
@@ -39,8 +45,21 @@ $url = full_url($request->server());
 $queries = $urlParser->getQueries($url);
 $request->addQuery($queries);
 
-$application = new Application(new ControllerDispatcher(), $routingHandler);
-$application->run(new Response(), $request, $urlGenerator, $view, 'MVC\Controller', 'MVC\Model', 'Index', 'index');
+/* Database configurations */
+$dbcollection = DBCollection::getInstance();
+if ($dbcollection->exists('Default')) {
+    $connection = $dbcollection->get('Default');
+    $driver = strtolower($connection->getDriver());
+    $sqlGenerator = $sqlGenerators[$driver];
+    $storage = new Storage($connection, $sqlGenerator);
+    $entityStorage = new EntityStorage($storage);
+    $modelDispatcher = new ModelDispatcher($storage, $entityStorage);
+} else {
+    $modelDispatcher = new ModelDispatcher();
+}
+
+$application = new Application(new ControllerDispatcher(), $modelDispatcher, $routingHandler);
+$application->run(new Response(), $request, $urlGenerator, $view, $eventManager, 'MVC\Controller', 'Index', 'index', 'MVC\Model');
 
 /**
  * ^ DEFAULT INIT ($application)
