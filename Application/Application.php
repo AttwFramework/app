@@ -14,9 +14,9 @@ use Attw\Mvc\View\StandartView;
 use Attw\Config\Configs;
 use Attw\Application\Exception\ApplicationException;
 use Attw\Mvc\Model\ModelDispatcher;
-use Attw\DB\Collection as DBCollection;
-use Attw\DB\Storage\Storage;
-use Attw\DB\Entity\EntityStorage;
+use Attw\Db\Collection as DBCollection;
+use Attw\Db\Storage\Storage;
+use Attw\Db\Entity\EntityStorage;
 
 require_once 'Configurations' . DIRECTORY_SEPARATOR . 'routes.php';
 require_once 'Event' . DIRECTORY_SEPARATOR . 'events.php';

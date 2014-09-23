@@ -25,13 +25,6 @@ $logs = array(
 $configs->set('Logs', $logs);
 
 /**
- * SQL Generators Collection
-*/
-$sqls = array( 'mysql' => new Attw\DB\SQL\MySQL ());
-
-$configs->set('SQLGenerators', $sqls);
-
-/**
  * Paths configuration
 */
 $paths = array(
