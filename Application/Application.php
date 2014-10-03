@@ -41,9 +41,11 @@ $routingHandler = new RoutingHandler($routesCollection);
 $urlGenerator = new RouterUrlGenerator($routesCollection);
 $urlParser = new UrlParser();
 $request = new Request();
-$url = full_url($request->server());
+$url = full_url($request->server->getAll());
 $queries = $urlParser->getQueries($url);
-$request->addQuery($queries);
+foreach ($queries as $key => $value) {
+    $request->query->set($key, $value);
+}
 
 /* Database configurations */
 $dbcollection = DBCollection::getInstance();
