@@ -10,7 +10,7 @@ use Attw\HTTP\Response;
 use Attw\Router\RoutingHandler;
 use Attw\Router\RouterUrlGenerator;
 use Attw\Tool\UrlParser;
-use Attw\Mvc\View\StandartView;
+use Attw\Mvc\View\StandardView;
 use Attw\Config\Configs;
 use Attw\Application\Exception\ApplicationException;
 use Attw\Mvc\Model\ModelDispatcher;
@@ -34,7 +34,7 @@ if (!isset($paths['Templates'])) {
     templateNotConfigured();
 }
 
-$view = new StandartView();
+$view = new StandardView();
 $view->setTemplatesPath($paths['Templates']);
 
 $routingHandler = new RoutingHandler($routesCollection);
